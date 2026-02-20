@@ -765,7 +765,7 @@ struct JournalView: View {
     
     func filterUnmatchedPeople() async {
         let ownerNames = ContactsService.shared.getDeviceOwnerName()
-        var filtered = segments
+        let filtered = segments
         
         for i in segments.indices {
             if segments[i].types.contains(.person) {
