@@ -27,12 +27,14 @@ class PersonNote {
     var date: Date
     var logID: UUID?
     var isLocked: Bool
+    var isPinned: Bool
     
-    init(id: UUID = UUID(), text: String, date: Date = Date(), logID: UUID? = nil, isLocked: Bool = false) {
+    init(id: UUID = UUID(), text: String, date: Date = Date(), logID: UUID? = nil, isLocked: Bool = false, isPinned: Bool = false) {
         self.id = id
         self.text = text
         self.date = date
         self.logID = logID
         self.isLocked = isLocked
+        self.isPinned = isPinned
     }
 }
