@@ -2,10 +2,7 @@ import SwiftUI
 import SwiftData
 
 struct SettingsView: View {
-    @State private var apiKey: String = Secrets.anthropicAPIKey
     @State private var showingClearConfirm = false
-    @State private var savedMessage = false
-    @State private var categorizePeople: Bool = Secrets.categorizePeople
     @State private var categorizeCalendar: Bool = Secrets.categorizeCalendar
     @State private var categorizeLogs: Bool = Secrets.categorizeLogs
     @State private var showPaywall = false
@@ -140,8 +137,6 @@ struct SettingsView: View {
                                 Secrets.anthropicAPIKey = apiKey
                                 savedMessage = true
                                 DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                                    savedMessage = false
-                                }
                             }) {
                                 HStack(spacing: 8) {
                                     Image(systemName: savedMessage ? "checkmark" : "key.fill")
